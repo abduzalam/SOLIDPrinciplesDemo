@@ -1,1 +1,1 @@
-# DesignPatternsDemo
+# Solid Principle Demo with C# 
