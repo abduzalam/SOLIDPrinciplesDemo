@@ -19,3 +19,11 @@ foreach (var monitor in lcdMonitors)
 {
     Console.WriteLine($"Name: {monitor.Name}, Type: {monitor.MonitorType}, Screen: {monitor.Screen}");
 }
+
+var curvedMonitors = filter.Filter(monitors,new ScreenTypeSpecification(Screen.CurvedScreen));
+
+Console.WriteLine("All Curved monitors");
+foreach (var monitor in curvedMonitors)
+{
+    Console.WriteLine($"Name: {monitor.Name}, Type: {monitor.MonitorType}, Screen: {monitor.Screen}");
+}
