@@ -1,11 +1,11 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using LSPInitial;
+using LSPInitialRev1;
 
-Console.WriteLine("The Liskov Substitution Principle (LSP)");
+Console.WriteLine("LSPInitialRev1!");
 
-// LSP states that child class objects should be able to replace parent class objects witout compromising application integrity
+Console.WriteLine();
 
-// We are using a simple Sum Calculator example to describe this principle
+//If we implement LSP, we can make use of any any child class as parent class and get the desired result
 
 var numbers = new int[] { 5, 7, 9, 8, 1, 6, 4 };
 SumCalculator sum = new SumCalculator(numbers);
@@ -15,8 +15,13 @@ EvenNumbersSumCalculator evenSum = new EvenNumbersSumCalculator(numbers);
 Console.WriteLine($"The sum of all the even numbers: {evenSum.Calculate()}");
 
 // If we modify the code as below, we won't be able to get the correct result
-
+Console.WriteLine();
 SumCalculator Evensum = new EvenNumbersSumCalculator(numbers);
 
-Console.WriteLine($"The sum of all the even numbers: {Evensum.Calculate()}"); // This prints 40 which is incorrect as we need 18 here
+Console.WriteLine($"The sum of all the even numbers: {Evensum.Calculate()}"); // This prints 18 which is correct as we need 18 here
+
+
+// So we modified the code to make it work , but still we modified the base class and derived class to make it work
+
+// Now look at the LSP implementation LSPFinal project
 
