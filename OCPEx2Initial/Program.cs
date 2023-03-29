@@ -33,3 +33,28 @@ foreach (var monitor in lcdMonitors)
     Console.WriteLine($" Name: {monitor.Name}, Screen: {monitor.Screen}, Type: {monitor.MonitorType}");
 }
 Console.WriteLine("==================================================");
+
+// Assume the above code is in our shop and we are using it for quite some time. 
+// One day we got another requirement to filter it based on Screen
+
+// So we have to add another FilterByScreen method into our MonitorFilter class ( This violates OCP )
+
+// So now we modified the Computer Monitor class, and modifying our client code to add the new feature
+
+var filterByCurvedScreen = filter.FilterByScreen(monitors, Screen.CurvedScreen);
+
+
+Console.WriteLine("ALL CurvedScreen Monitors (This is our 2nd requirement)");
+Console.WriteLine("=====================================================");
+
+foreach (var monitor in filterByCurvedScreen)
+{
+    Console.WriteLine($" Name: {monitor.Name}, Screen: {monitor.Screen}, Type: {monitor.MonitorType}");
+}
+Console.WriteLine("=====================================================");
+
+// This program works , but
+// if you observe this program carefully , we have to modify the existing classes for any new requirement
+// So in order to avoid modifying existing classes, we can rewrite this program in a different way
+
+// Now look into OCPEx2Final project
