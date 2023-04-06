@@ -15,6 +15,7 @@ namespace ConsoleUI
     // 2. Application is not one big monolithic, it is a tiny components app, so we cn unplug and plug something new 
     // 3. Now we are setting up for dependency injection, which is the way of implemething this priciple. 
     //    Dependency injects remove the factory class to create the object in program.cs file
+
     public static class Factory
     {
         public static IPerson CreatePerson() => new Person();
